@@ -11,12 +11,18 @@
 // user is prompted to enter the engineer's employee ID
 // user is prompted to enter the engineer's email address
 // user is prompted to enter the engineer's github username
-// user is then taken back to step 8 and an 'engineer' object is created (properties of name, role, id, email and github)
+// user is then taken back to step 8 and an 'engineer' object is created (properties of name, role, id, email and github) (recurssion?)
 // if user chooses intern, then
 // user is prompted to come up with the intern's name
 // user is prompted to enter the intern's employee ID
 // user is prompted to enter the intern's email
 // user is prompted to enter the intern's school
-// user is then taken back to step 8 and an 'intern' object is created (properties of name, role, id, email and school)
-// if the user chooses 'I'm done'
-// take the data 
+// user is then taken back to step 8 and an 'intern' object is created (properties of name, role, id, email and school) (recurssion?)
+// if the user chooses 'I'm done' exit the loop and call a function to generateHTML
+// For each object that was created, make an HTML card
+// fill out the HTML card with each of the properties (based on whether it was a PM, Eng, or intern)
+
+//initialize packages
+
+const fs = require("fs");
+const inquirer = require('inquirer');
