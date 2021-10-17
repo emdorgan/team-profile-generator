@@ -29,6 +29,8 @@
 const fs = require("fs");
 const inquirer = require('inquirer');
 const Manager = require("./lib/manager");
+const Engineer = require("./lib/engineer");
+const Intern = require("./lib/intern");
 
 //questions array
 const questions = [
@@ -41,26 +43,23 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'title',
+        name: 'name',
         message:'Enter the Manager name',
         when: () => team.length === 0
     },
     {
         type: 'input',
-        name: 'title',
+        name: 'name',
         message:'Enter the Engineer name',
         when: (answers) => answers.nextMember === "Engineer"
     },
     {
         type: 'input',
-        name: 'title',
+        name: 'name',
         message:'Enter the Intern name',
         when: (answers) => answers.nextMember === "Intern"
     }
 ];
-
-//boolean that determines if we're done
-let areWeDone;
 
 //Team members (an array of objects)
 const team = [];
@@ -74,8 +73,16 @@ function init() {
             if(team.length === 0){
                 const teamManager = new Manager(response.name)
                 team.push(teamManager);
-                console.log(team);
             }
+            else if(response.nextMember === "Engineer"){
+                const teamManager = new Engineer(response.name)
+                team.push(teamManager);
+            }
+            else if(response.nextMember === "Intern"){
+                const teamManager = new Intern(response.name)
+                team.push(teamManager);
+            }
+            console.log(team)
             init();
         }
         else {
