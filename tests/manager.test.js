@@ -1,6 +1,7 @@
 const Manager = require("../lib/manager");
 
 describe("Manager class", () => {
+    // Positive tests
     it("Making a new instance of the class should return an object", () => {
         const obj = new Manager();
 

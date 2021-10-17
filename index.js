@@ -31,50 +31,57 @@ const inquirer = require('inquirer');
 const Manager = require("./lib/manager");
 
 //questions array
-const questions = [];
+const questions = [
+    {
+        type: 'list',
+        name: 'nextMember',
+        message:"Enter next team member role (or select 'I'm done')",
+        choices: ['Engineer', 'Intern', "I'm done"],
+        when: () => team.length !== 0
+    },
+    {
+        type: 'input',
+        name: 'title',
+        message:'Enter the Manager name',
+        when: () => team.length === 0
+    },
+    {
+        type: 'input',
+        name: 'title',
+        message:'Enter the Engineer name',
+        when: (answers) => answers.nextMember === "Engineer"
+    },
+    {
+        type: 'input',
+        name: 'title',
+        message:'Enter the Intern name',
+        when: (answers) => answers.nextMember === "Intern"
+    }
+];
 
-function makeManager(){
-    inquirer
-        .prompt(questions)
-        .then((response) => {
-            return new Manager()
-        })
-};
+//boolean that determines if we're done
+let areWeDone;
 
-function makeEngineer(){
-    inquirer
-    .prompt(questions)
-    .then((response) => {
-        
-    })
-};
-
-function makeIntern(){
-    inquirer
-    .prompt(questions)
-    .then((response) => {
-        
-    })
-};
-
-function nextTeamMember(){
-    inquirer
-    .prompt(questions)
-    .then((response) => {
-        
-    })
-}
+//Team members (an array of objects)
+const team = [];
 
 function init() {
-    const team = [];
-    if(team.length === 0){
-        team.push(makeManager())
-    }
-    // while(nextTeamMember){
+    inquirer
+    .prompt(questions)
+    .then((response) => {
         
-    // }
-    
-
+        if(response.nextMember !== "I'm done"){
+            if(team.length === 0){
+                const teamManager = new Manager(response.name)
+                team.push(teamManager);
+                console.log(team);
+            }
+            init();
+        }
+        else {
+            console.log("Your HTML has been generated")
+        }
+    })
 };
 
 init();
