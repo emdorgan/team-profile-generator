@@ -26,11 +26,12 @@
 
 //initialize packages
 
-
-
 const fs = require("fs");
 const inquirer = require('inquirer');
 const Manager = require("./lib/manager");
+
+//questions array
+const questions = [];
 
 function makeManager(){
     inquirer

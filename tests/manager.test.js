@@ -19,7 +19,7 @@ describe("Manager class", () => {
         expect(obj.getId()).toBe(id);
         expect(obj.getEmail()).toBe(email);
     });
-    it("Should get an office number if passed as the 4th argument", () => {
+    it("Should get an office number if passed as the 4th argument and getOfficeManager should return it", () => {
         const officeNum = "123"
         const obj = new Manager("", "", "", officeNum);
 
