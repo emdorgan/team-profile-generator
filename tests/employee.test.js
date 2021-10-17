@@ -5,46 +5,46 @@ describe("Employee class", () => {
         const obj = new Employee();
 
         expect(typeof(obj)).toBe("object");
-    })
+    });
     it("name property should be assigned to the obj when passed through the constructor", () => {
         const name = "django";
         const obj = new Employee(name);
 
         expect(obj.name).toBe(name);
-    })
+    });
     it("id property should be assigned to the obj when passed through the constructor", () => {
         const id = "12903";
         const obj = new Employee("noname", id);
 
         expect(obj.id).toBe(id);
-    })
+    });
     it("email property should be assigned to the obj when passed through the constructor", () => {
         const email = "aol";
         const obj = new Employee("noname", "blankID", email);
 
         expect(obj.email).toBe(email);
-    })
+    });
     it("method getName() should return the name", () => {
         const name = "django";
         const obj = new Employee(name);
 
         expect(obj.getName()).toBe(name);
-    })
+    });
     it("method getId() should return the ID", () => {
         const id = "id";
         const obj = new Employee("noname", id);
 
         expect(obj.getId()).toBe(id);
-    })
+    });
     it("method getEmail() should return the email", () => {
         const email = "aol";
         const obj = new Employee("noname", "blankID", email);
 
         expect(obj.getEmail()).toBe(email);
-    })
+    });
     it("method getRole() should return the string 'Employee'", () => {
         const obj = new Employee();
 
         expect(obj.getRole()).toBe("Employee");
-    })
-})
+    });
+});

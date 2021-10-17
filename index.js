@@ -1,4 +1,4 @@
-// User starts by entering node index.js  <-------------- Pseudocode
+// User starts by entering node index.js  <-------------- Pseudocode written before I read the whole assignment readme
 // Have a constructor (or class?) for a generic 'team member' object (properites of name, role, ID, email, officeNumber)
 // User is prompted to come up with the team manager's name
 // user is prompted to enter the team manager's employee ID
@@ -30,12 +30,13 @@
 
 const fs = require("fs");
 const inquirer = require('inquirer');
+const Manager = require("./lib/manager");
 
 function makeManager(){
     inquirer
         .prompt(questions)
         .then((response) => {
-            
+            return new Manager()
         })
 };
 
@@ -55,7 +56,23 @@ function makeIntern(){
     })
 };
 
+function nextTeamMember(){
+    inquirer
+    .prompt(questions)
+    .then((response) => {
+        
+    })
+}
+
 function init() {
+    const team = [];
+    if(team.length === 0){
+        team.push(makeManager())
+    }
+    // while(nextTeamMember){
+        
+    // }
+    
 
 };
 
