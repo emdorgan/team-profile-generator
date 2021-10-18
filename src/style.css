@@ -18,19 +18,25 @@ body{
   font-weight:bold;
 }
 .container-custom {
-  max-width: 700px;
+  min-width: 700px;
   margin: 0 auto;
-  max-height: 500px;
+  min-height: 500px;
   border-radius: 25px;
   background-color: rgb(65, 65, 65);
   color: white;
   padding: 2%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 .custom-card {
   background-color: #979797;
   color: white;
-  box-shadow: 5px 5px 10px black;
+  box-shadow: 5px 5px 10px rgb(54, 51, 51);
   font-size: 1.2em;
+  height: 260px;
+  margin-right: 2%;
+  margin-bottom: 2%;
 }
 .custom-card li{
   background-color: #979797;
