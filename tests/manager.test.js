@@ -1,9 +1,8 @@
 const Manager = require("../lib/manager");
 
 describe("Manager class", () => {
-    // Positive tests
     it("Making a new instance of the class should return an object", () => {
-        const obj = new Manager();
+        const obj = new Manager("", "2", "");
 
         expect(typeof(obj)).toBe("object");
     });
@@ -22,7 +21,7 @@ describe("Manager class", () => {
     });
     it("Should get an office number if passed as the 4th argument and getOfficeManager should return it", () => {
         const officeNum = "123"
-        const obj = new Manager("", "", "", officeNum);
+        const obj = new Manager("", "2", "", officeNum);
 
         expect(obj.officeNumber).toBe(officeNum);
         expect(obj.getOfficeNumber()).toBe(officeNum);

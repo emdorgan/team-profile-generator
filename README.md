@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-a Node.js command-line application
+This app runs directly in the console (see getting started section) and allows the user to generate an HTML doc displaying their 'team'. These teams are made up of a single manager and any number of engineers or interns. The data for these teams (name, id, etc..) is provided by asking the user a series of prompts. A sample `index.html` has been provided in the `dist` directory.
 
 ## To Do list
 
@@ -16,7 +16,9 @@ a Node.js command-line application
 * Open up your terminal.
 * Navigate to the readme-generator folder using `cd <directory name>` to change directories (use the `ls` command to see files in your current directory).
 * Run the command 'npm install inquirer' and wait for packages to install.
-* Finally, enter the command 'node index.js" and follow the promps.
+* Enter the command 'node index.js" and follow the promps.
+* Once you've added all the engineers and interns, choose the "I'm done" option and your `index.html` file will be generated in the `dist` directory
+* Copy the ENTIRE contents of the `dist` directory (make sure and get the css files).
 
 * Dev Notes: If you want to modify the code, the test sofware can be accessed with 'npm install jest' and run with 'npm run test'
 

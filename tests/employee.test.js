@@ -2,13 +2,13 @@ const Employee = require("../lib/employee");
 
 describe("Employee class", () => {
     it("Making a new instance of the class should return an object", () => {
-        const obj = new Employee();
+        const obj = new Employee("", "2", "");
 
         expect(typeof(obj)).toBe("object");
     });
     it("name property should be assigned to the obj when passed through the constructor", () => {
         const name = "django";
-        const obj = new Employee(name);
+        const obj = new Employee(name, "2");
 
         expect(obj.name).toBe(name);
     });
@@ -20,13 +20,13 @@ describe("Employee class", () => {
     });
     it("email property should be assigned to the obj when passed through the constructor", () => {
         const email = "aol";
-        const obj = new Employee("noname", "blankID", email);
+        const obj = new Employee("noname", "1", email);
 
         expect(obj.email).toBe(email);
     });
     it("method getName() should return the name", () => {
         const name = "django";
-        const obj = new Employee(name);
+        const obj = new Employee(name, "2");
 
         expect(obj.getName()).toBe(name);
     });
@@ -38,18 +38,13 @@ describe("Employee class", () => {
     });
     it("method getEmail() should return the email", () => {
         const email = "aol";
-        const obj = new Employee("noname", "blankID", email);
+        const obj = new Employee("noname", "1", email);
 
         expect(obj.getEmail()).toBe(email);
     });
     it("method getRole() should return the string 'Employee'", () => {
-        const obj = new Employee();
+        const obj = new Employee("", "2", "");
 
         expect(obj.getRole()).toBe("Employee");
-    });
-    it("Should NOT let me set an id if I didn't enter a number", () => {
-        const obj = new Employee("django", "trolling");
-        const err = new Error("Expected parameter 'id' to be a number");
-        expect(obj).toThrowError(err);
     });
 });

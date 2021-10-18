@@ -2,7 +2,7 @@ const Engineer = require("../lib/engineer");
 
 describe("Engineer class", () => {
     it("Making a new instance of the class should return an object", () => {
-        const obj = new Engineer();
+        const obj = new Engineer("", "2", "");
 
         expect(typeof(obj)).toBe("object");
     });
@@ -21,7 +21,7 @@ describe("Engineer class", () => {
     });
     it("Should get a Github if passed as the 4th argument and getGithub should return it", () => {
         const git = "git"
-        const obj = new Engineer("", "", "", git);
+        const obj = new Engineer("", "2", "", git);
 
         expect(obj.github).toBe(git);
         expect(obj.getGithub()).toBe(git);

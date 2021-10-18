@@ -2,7 +2,7 @@ const Intern = require("../lib/intern");
 
 describe("Intern class", () => {
     it("Making a new instance of the class should return an object", () => {
-        const obj = new Intern();
+        const obj = new Intern("", "2", "");
 
         expect(typeof(obj)).toBe("object");
     });
@@ -21,7 +21,7 @@ describe("Intern class", () => {
     });
     it("Should get an school if passed as the 4th argument and getSchool should return it", () => {
         const school = "rpi"
-        const obj = new Intern("", "", "", school);
+        const obj = new Intern("", "2", "", school);
 
         expect(obj.school).toBe(school);
         expect(obj.getSchool()).toBe(school);
