@@ -31,8 +31,13 @@ const inquirer = require('inquirer');
 const Manager = require("./lib/manager");
 const Engineer = require("./lib/engineer");
 const Intern = require("./lib/intern");
+const generateHTML = require("./generateHTML")
+
+//Team members (an array of objects)
+const team = [];
 
 //questions array
+
 //Note: The 'enter next team member' is the first question (since that choice determines the class-specifc questions)
 //We don't want it to run on the first prompt, so it's skipped if team array length is 0
 const questions = [
@@ -93,15 +98,13 @@ const questions = [
     }
 ];
 
-function writeHTML(team){
+function writeHTML(){
     fs.writeFile("./dist/index.html", generateHTML(team), (err) =>
     err ? console.error(err) : console.log('Success!')
 );
 }
 
 function init() {
-    //Team members (an array of objects)
-    const team = [];
     //inquirer is called to ask user questions
     inquirer
     .prompt(questions)
@@ -121,13 +124,12 @@ function init() {
                 const teamManager = new Intern(response.name, response.id, response.email, response.school);
                 team.push(teamManager);
             }
-            console.log(team)
             // After making the object, the init function is called recurssively to go through the prompts again
             init();
         }
         else {
             //If we're done, the makeCards() function is called to render a card per team member(passing in an array of objects)
-            writeHTML(team);
+            writeHTML();
             console.log("Your HTML has been generated")
         }
     })

@@ -1,39 +1,4 @@
-// this js file handles generating the HTML file using template literals
 
-// <h5 class="card-title">${element.name}</h5>
-// <h5 class="card-title custom-role">${element.getRole()}</h5>
-
-function renderSpecialTrait(){
-
-}
-
-function renderIcon(){
-
-};
-
-function renderCards(data){
-    let cards ="";
-    data.forEach(element => {
-        cards = cards.concat(
-            `<div class="card custom-card" style="width: 18rem;">
-            <div class="card-body custom-cb">
-                <h5 class="card-title">${element.name}</h5>
-                <h5 class="card-title custom-role">${element.getRole()}</h5>
-            </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
-            </ul>
-        </div>
-        `);
-    })
-    return cards;
-}
-
-function generateHTML(data){
-    console.log(data);
-    return `
     <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -58,12 +23,20 @@ function generateHTML(data){
         <span class="navbar-brand mb-0 h1 custom-header">My Team</span>
     </nav>
     <div class="container-custom">
-        ${renderCards(data)}
+        <div class="card custom-card" style="width: 18rem;">
+            <div class="card-body custom-cb">
+                <h5 class="card-title">ysthola1</h5>
+                <h5 class="card-title custom-role">Manager</h5>
+            </div>
+            <ul class="list-group list-group-flush">
+            <li class="list-group-item">Cras justo odio</li>
+            <li class="list-group-item">Dapibus ac facilisis in</li>
+            <li class="list-group-item">Vestibulum at eros</li>
+            </ul>
+        </div>
+        
     </div>
     <!-- Bootstrap script link -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
-</html>`
-}
-
-module.exports = generateHTML;
+</html>
