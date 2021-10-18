@@ -47,4 +47,9 @@ describe("Employee class", () => {
 
         expect(obj.getRole()).toBe("Employee");
     });
+    it("Should NOT let me set an id if I didn't enter a number", () => {
+        const obj = new Employee("django", "trolling");
+        const err = new Error("Expected parameter 'id' to be a number");
+        expect(obj).toThrowError(err);
+    });
 });

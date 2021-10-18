@@ -14,16 +14,15 @@ function renderSpecialTrait(employee){
     }
 }
 
-function renderIcon(){
+function renderIcon(employee){
     if(employee.getRole() === "Manager"){
-        return `Office Number: ${employee.getOfficeNumber()}`;
+        return `<i class="fas fa-mug-hot"></i>`;
     }
     else if(employee.getRole() === "Engineer"){
-        const git = employee.getGithub()
-        return `GitHub: <a href="https://github.com/${git}">${git}</a>`;
+        return `<i class="fas fa-cogs"></i>`;
     }
     else if(employee.getRole() === "Intern"){
-        return `School: ${employee.getSchool()}`;
+        return `<i class="fas fa-user-graduate"></i>`;
     }
 };
 
@@ -38,7 +37,7 @@ function renderCards(data){
             </div>
             <ul class="list-group list-group-flush">
                 <li class="list-group-item">ID: ${element.getId()}</li>
-                <li class="list-group-item">email: ${element.getEmail()}</li>
+                <li class="list-group-item">email: <a href="mailto:${element.getEmail()}">${element.getEmail()}</a></li>
                 <li class="list-group-item">${renderSpecialTrait(element)}</li>
             </ul>
         </div>

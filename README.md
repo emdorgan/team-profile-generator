@@ -6,8 +6,6 @@ a Node.js command-line application
 
 ## To Do list
 
-* Write all prompt code
-* Write code generating the HTML file
 * Add a bunch of negative and exception tests to fail
 * Write stuff in objects to prevent those tests from failing (user validation)
 
@@ -17,8 +15,10 @@ a Node.js command-line application
 * Next, install [Node.js](https://nodejs.org/).
 * Open up your terminal.
 * Navigate to the readme-generator folder using `cd <directory name>` to change directories (use the `ls` command to see files in your current directory).
-* Run the command 'npm install' and wait for packages to install.
+* Run the command 'npm install inquirer' and wait for packages to install.
 * Finally, enter the command 'node index.js" and follow the promps.
+
+* Dev Notes: If you want to modify the code, the test sofware can be accessed with 'npm install jest' and run with 'npm run test'
 
 ## Deployed Link
 
