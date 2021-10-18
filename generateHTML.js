@@ -1,14 +1,30 @@
 // this js file handles generating the HTML file using template literals
+// https://github.com/emdorgan
 
-// <h5 class="card-title">${element.name}</h5>
-// <h5 class="card-title custom-role">${element.getRole()}</h5>
-
-function renderSpecialTrait(){
-
+function renderSpecialTrait(employee){
+    if(employee.getRole() === "Manager"){
+        return `Office Number: ${employee.getOfficeNumber()}`;
+    }
+    else if(employee.getRole() === "Engineer"){
+        const git = employee.getGithub()
+        return `GitHub: <a href="https://github.com/${git}">${git}</a>`;
+    }
+    else if(employee.getRole() === "Intern"){
+        return `School: ${employee.getSchool()}`;
+    }
 }
 
 function renderIcon(){
-
+    if(employee.getRole() === "Manager"){
+        return `Office Number: ${employee.getOfficeNumber()}`;
+    }
+    else if(employee.getRole() === "Engineer"){
+        const git = employee.getGithub()
+        return `GitHub: <a href="https://github.com/${git}">${git}</a>`;
+    }
+    else if(employee.getRole() === "Intern"){
+        return `School: ${employee.getSchool()}`;
+    }
 };
 
 function renderCards(data){
@@ -17,13 +33,13 @@ function renderCards(data){
         cards = cards.concat(
             `<div class="card custom-card" style="width: 18rem;">
             <div class="card-body custom-cb">
-                <h5 class="card-title">${element.name}</h5>
-                <h5 class="card-title custom-role">${element.getRole()}</h5>
+                <h5 class="card-title">${element.getName()}</h5>
+                <h5 class="card-title custom-role">${renderIcon(element)} ${element.getRole()}</h5>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">Cras justo odio</li>
-                <li class="list-group-item">Dapibus ac facilisis in</li>
-                <li class="list-group-item">Vestibulum at eros</li>
+                <li class="list-group-item">ID: ${element.getId()}</li>
+                <li class="list-group-item">email: ${element.getEmail()}</li>
+                <li class="list-group-item">${renderSpecialTrait(element)}</li>
             </ul>
         </div>
         `);
@@ -32,7 +48,6 @@ function renderCards(data){
 }
 
 function generateHTML(data){
-    console.log(data);
     return `
     <!DOCTYPE html>
 <html lang="en">
