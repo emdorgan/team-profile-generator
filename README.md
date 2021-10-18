@@ -6,10 +6,10 @@ a Node.js command-line application
 
 ## To Do list
 
-* setup packages
-* write pseudocode
-* write tests
-* Write software
+* Write all prompt code
+* Write code generating the HTML file
+* Add a bunch of negative and exception tests to fail
+* Write stuff in objects to prevent those tests from failing (user validation)
 
 ## Getting Started
 

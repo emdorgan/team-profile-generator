@@ -1,0 +1,42 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body{
+  background-color: #121212;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.custom-nav {
+  justify-content: center;
+  margin-bottom: 2%;
+  width: 100vw;
+  background-color: rgb(139, 196, 177);
+}
+.custom-header{
+  font-size: 1.5em;
+}
+.container-custom {
+  border: 1px solid rgb(65, 65, 65);
+  max-width: 700px;
+  margin: 0 auto;
+  max-height: 500px;
+  border-radius: 25px;
+  background-color: rgb(65, 65, 65);
+  color: white;
+  padding: 2%;
+}
+.custom-card {
+  background-color: #979797;
+  color: white;
+  box-shadow: 5px 5px 10px black;
+}
+.custom-card li{
+  background-color: #979797;
+  color: white;
+}
+@media only screen and (max-width: 426px){
+  .custom-header{
+    font-size: 1em;
+  }
+}
