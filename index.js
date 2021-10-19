@@ -130,7 +130,7 @@ function init() {
         else {
             //If we're done, the makeCards() function is called to render a card per team member(passing in an array of objects)
             writeHTML();
-            console.log("Your HTML has been generated")
+            console.log("Your HTML is being generated")
         }
     })
 };

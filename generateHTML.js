@@ -7,7 +7,7 @@ function renderSpecialTrait(employee){
     }
     else if(employee.getRole() === "Engineer"){
         const git = employee.getGithub()
-        return `GitHub: <a href="https://github.com/${git}">${git}</a>`;
+        return `GitHub: <a href="https://github.com/${git}" target="_blank">${git}</a>`;
     }
     else if(employee.getRole() === "Intern"){
         return `School: ${employee.getSchool()}`;

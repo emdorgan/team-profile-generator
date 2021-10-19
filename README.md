@@ -2,12 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-This app runs directly in the console (see getting started section) and allows the user to generate an HTML doc displaying their 'team'. These teams are made up of a single manager and any number of engineers or interns. The data for these teams (name, id, etc..) is provided by asking the user a series of prompts. A sample `index.html` has been provided in the `dist` directory.
-
-## To Do list
-
-* Add a bunch of negative and exception tests to fail
-* Write stuff in objects to prevent those tests from failing (user validation)
+This app runs directly in the console (see getting started section) and allows the user to generate an HTML doc displaying their 'team' as a series of cards. These teams are made up of a single manager and any number of engineers or interns. The data for these teams (name, id, etc..) is provided by asking the user a series of prompts and the user can add as many engineers and interns as possible (under a single manager). A sample `index.html` has been provided in the `dist` directory.
 
 ## Getting Started
 
@@ -28,7 +23,13 @@ Note: There is no deployed link for this application. See "Getting Started" sect
 
 ## Demo
 
+![demo of app working](demo/team-builder-demo.gif)
 
+* [Link to app working](https://watch.screencastify.com/v/cqaA8YbgXj3lauCxSQSm)
+
+![demo of tests passing](demo/tests-passing.gif)
+
+* [Link to tests passing](https://watch.screencastify.com/v/AujSaSX83FXPQOssNd2S)
 
 ## Built With
 
