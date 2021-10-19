@@ -39,6 +39,7 @@ Note: There is no deployed link for this application. See "Getting Started" sect
 * [Bootstrap](https://getbootstrap.com/)
 * [Node.js](https://nodejs.org/)
 * [Inquirer package](https://www.npmjs.com/package/inquirer)
+* [Jest package](https://jestjs.io/)
 
 ## Authors
 
