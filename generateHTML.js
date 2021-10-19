@@ -1,6 +1,8 @@
 // this js file handles generating the HTML file using template literals
 // https://github.com/emdorgan
 
+// Each role has one 'special' feature that the others don't, so this function figures out the role of the object comming in
+// and renders that category
 function renderSpecialTrait(employee){
     if(employee.getRole() === "Manager"){
         return `Office Number: ${employee.getOfficeNumber()}`;
@@ -13,7 +15,7 @@ function renderSpecialTrait(employee){
         return `School: ${employee.getSchool()}`;
     }
 }
-
+// there are three icons for each employee type. This simple function figures out the role and assigns the appropriate icon
 function renderIcon(employee){
     if(employee.getRole() === "Manager"){
         return `<i class="fas fa-mug-hot"></i>`;
@@ -26,6 +28,7 @@ function renderIcon(employee){
     }
 };
 
+// iteratively builds the cards, takes in the array of objects as data and uses a forEach, uses renderIcon and renderSpecialTrait since those two depend on the employee type
 function renderCards(data){
     let cards ="";
     data.forEach(element => {
@@ -45,13 +48,13 @@ function renderCards(data){
     })
     return cards;
 }
-
+// the rest of the HTML page, which never changes, and has all the stylesheet and comments
 function generateHTML(data){
     return `
     <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- This is a SAMPLE HTML file, used to determine the CSS and the card template which will be rendered in javascript -->
+    <!-- Your HTML has been generated -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
